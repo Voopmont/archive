@@ -1,0 +1,3848 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>District of Voopmont and Icelesia - bill-proposal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #7289da;
+            background-color: rgba(114, 137, 218, .1);
+            font-weight: 500;
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0.1em;
+            padding: 0.2em 0.35em;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z" />
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z" />
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z" />
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z" />
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/751187212502302880/f1c4ef0f2f29c380b86c80bce76c86fa.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">District of Voopmont and Icelesia</div>
+        <div class="preamble__entry">Voopmontian Council / bill-proposal</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">07-Sep-20 11:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="752548149867839610" id="message-752548149867839610" title="Message sent: 07-Sep-20 11:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I propose that we propose the previously proposed bills</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548196856889374" id="message-752548196856889374" title="Message sent: 07-Sep-20 11:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Luckily I have an archive</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548339517751327" id="message-752548339517751327" title="Message sent: 07-Sep-20 11:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1JPeBy-PoZnixSGIayploqhiOQD5DIRQdxMitpzdNxXg/edit?usp=drivesdk">https://docs.google.com/document/d/1JPeBy-PoZnixSGIayploqhiOQD5DIRQdxMitpzdNxXg/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1JPeBy-PoZnixSGIayploqhiOQD5DIRQdxMitpzdNxXg/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//001//VCCA] Voopmontian Council Creation Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #1 July 28th, 2020 VOOPMONTIAN COUNCIL CREATION ACT Senator Coolio  Effective Immediately Description: The Voopmontian Council will be a body of citizens from Voopmont that have the ability to create district policies that will be voted on by the coun...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/mING6FrX7SIeXOYDeaH4exgteJ00xN4gMVZQ3zOWNsw/https/lh6.googleusercontent.com/Dwc79vJr_WRPm9q3vljSRmvs-Gn-xslkgo6HPD3XzSzHM51dLaeCbUQRi2Wrc7Nz_MLfbxj-hQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/mING6FrX7SIeXOYDeaH4exgteJ00xN4gMVZQ3zOWNsw/https/lh6.googleusercontent.com/Dwc79vJr_WRPm9q3vljSRmvs-Gn-xslkgo6HPD3XzSzHM51dLaeCbUQRi2Wrc7Nz_MLfbxj-hQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548427996463104" id="message-752548427996463104" title="Message sent: 07-Sep-20 11:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1otlpmP9COX9PclGR0z-DlGXROwkxhW28ZFDswyPTbbM/edit?usp=drivesdk">https://docs.google.com/document/d/1otlpmP9COX9PclGR0z-DlGXROwkxhW28ZFDswyPTbbM/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1otlpmP9COX9PclGR0z-DlGXROwkxhW28ZFDswyPTbbM/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//002//GPA] Governor Position Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #2 July 27th, 2020 GOVERNOR POSITION ACT Senator Coolio  Effective Immediately Description: This act will create the Governor position in the Voopmontian Government. Law: SEC. 1: Short Name VPT//002//GPA  SEC. 2: Governor’s Job in Government The Gover...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/Mmj12QxbGR9UcsZvGShW6QTTmVQWPcKOkNXtkuCFUxU/https/lh3.googleusercontent.com/ItGl3ornzGm3icMZ8VfP_qegsz7Aq1RuGq-L4mSVptQgBCutgSMRDdvh5EocAeRbD-8kNFjPUg%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/Mmj12QxbGR9UcsZvGShW6QTTmVQWPcKOkNXtkuCFUxU/https/lh3.googleusercontent.com/ItGl3ornzGm3icMZ8VfP_qegsz7Aq1RuGq-L4mSVptQgBCutgSMRDdvh5EocAeRbD-8kNFjPUg%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548486301483010" id="message-752548486301483010" title="Message sent: 07-Sep-20 11:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1IBklvu8Dz9K2STUmW71p7HZSdkbNGXeVrId6LAwPc9Q/edit?usp=drivesdk">https://docs.google.com/document/d/1IBklvu8Dz9K2STUmW71p7HZSdkbNGXeVrId6LAwPc9Q/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1IBklvu8Dz9K2STUmW71p7HZSdkbNGXeVrId6LAwPc9Q/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//003//DBTA] District Bill Tag Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #3 26 July 2020 District Bill Tag Act Senator Coolio  Effective immediately Description: An organisation of the referral tags of District Policies and Acts Short Title This Act may be cited as the District Bill Tag Act [VPT//003//DBTA]. Interpretation...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/p74RIvoigOqGJrxoCaWcNiDm0e94J5lceVUr1BTIrgs/https/lh4.googleusercontent.com/snUr7mYwMRCvWUVk1AjOGZuxSdoGTo9KqikPgYNz0mFam4wm96Zcaj26kjcKL2OO7Qkz-VQZNQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/p74RIvoigOqGJrxoCaWcNiDm0e94J5lceVUr1BTIrgs/https/lh4.googleusercontent.com/snUr7mYwMRCvWUVk1AjOGZuxSdoGTo9KqikPgYNz0mFam4wm96Zcaj26kjcKL2OO7Qkz-VQZNQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548524574376008" id="message-752548524574376008" title="Message sent: 07-Sep-20 11:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1rLMDXvtg7zmAJuSjIS-qxmP3Vsod5A2jjEAidG0KlGA/edit?usp=drivesdk">https://docs.google.com/document/d/1rLMDXvtg7zmAJuSjIS-qxmP3Vsod5A2jjEAidG0KlGA/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1rLMDXvtg7zmAJuSjIS-qxmP3Vsod5A2jjEAidG0KlGA/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//004//CA] Census Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #4 26 July 2020 Census Act Senator Coolio  Effective immediately Description: Creation of a District Public Census Short Title This Act may be cited as the Census Act [VPT//004//CA]. Interpretation   In this Act, unless the context otherwise requires ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/cfLrUOOs8kQLaTj76nHZuZxObsp7pk3srIlnl-jUjAQ/https/lh6.googleusercontent.com/OUTQd_79li3vSJO8zPDJa_JLxXhV9DvOjYySH8TqKWuUIoRr4aSYciGofvg-Ia8RJaJ-nCOLzg%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/cfLrUOOs8kQLaTj76nHZuZxObsp7pk3srIlnl-jUjAQ/https/lh6.googleusercontent.com/OUTQd_79li3vSJO8zPDJa_JLxXhV9DvOjYySH8TqKWuUIoRr4aSYciGofvg-Ia8RJaJ-nCOLzg%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548564563132416" id="message-752548564563132416" title="Message sent: 07-Sep-20 11:19 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1lLvTkOsMF0mWZY_DAPzEYDeUR-iE1tNcZwaPeG1MThE/edit?usp=drivesdk">https://docs.google.com/document/d/1lLvTkOsMF0mWZY_DAPzEYDeUR-iE1tNcZwaPeG1MThE/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1lLvTkOsMF0mWZY_DAPzEYDeUR-iE1tNcZwaPeG1MThE/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//005//EA] Education Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #5 INSERT DATE OF PROPOSED POLICY HERE Education Act Senator Coolio  Effective immediately Description: An Act relating to education and registration of schools Part I GENERAL Short Title This Act may be cited as the Education Act. Interpretation In t...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/U4BOkmQzZYyxG6mVAmsoN967HmSGxumD6E-DhBUsiGM/https/lh3.googleusercontent.com/WW30ElwLr7-yTy6smhioB80Fj7sBIl4-1XJ0zi_nhV7hSszUDNv7d4Rz47AvL64-5yrvDood7A%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/U4BOkmQzZYyxG6mVAmsoN967HmSGxumD6E-DhBUsiGM/https/lh3.googleusercontent.com/WW30ElwLr7-yTy6smhioB80Fj7sBIl4-1XJ0zi_nhV7hSszUDNv7d4Rz47AvL64-5yrvDood7A%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="752548880457007214" id="message-752548880457007214" title="Message sent: 07-Sep-20 11:20 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/12iHclDXF4j2RoapFSgTbQZTkqXEDvgNxmksrhSz3j_U/edit?usp=drivesdk">https://docs.google.com/document/d/12iHclDXF4j2RoapFSgTbQZTkqXEDvgNxmksrhSz3j_U/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/12iHclDXF4j2RoapFSgTbQZTkqXEDvgNxmksrhSz3j_U/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//006//IIA] Infrastructure Improvement Policy</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #6 July 27, 2020 Infrastructure Improvement Act  Effective Immediately Description: Will improve the Infrastructure of Voopmont Part I GENERAL Short Title This Act may be cited as the Infrastructure Improvement Act [VPT//006//IIA]. Interpretations In ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/XzZ8UY9q_vZF-4-_aiPCLyNWAJDj_Te0BriVL2CuMuA/https/lh4.googleusercontent.com/fx4dKlsbVYjLp1-81R6XUtsokLgd2xGa1s2pPZxFS_pHyvyeAp3hnx1k_rdYS2UFzpWYwPB9RQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/XzZ8UY9q_vZF-4-_aiPCLyNWAJDj_Te0BriVL2CuMuA/https/lh4.googleusercontent.com/fx4dKlsbVYjLp1-81R6XUtsokLgd2xGa1s2pPZxFS_pHyvyeAp3hnx1k_rdYS2UFzpWYwPB9RQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 07:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="754310007931142144" id="message-754310007931142144" title="Message sent: 12-Sep-20 07:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">that worked right?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:04 PM</span>
+
+            <div class="chatlog__message " data-message-id="754311363735715890" id="message-754311363735715890" title="Message sent: 12-Sep-20 08:04 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Nope</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:05 PM</span>
+
+            <div class="chatlog__message " data-message-id="754311770470088744" id="message-754311770470088744" title="Message sent: 12-Sep-20 08:05 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Why</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754311811851092009" id="message-754311811851092009" title="Message sent: 12-Sep-20 08:05 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Why did it not work</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:05 PM</span>
+
+            <div class="chatlog__message " data-message-id="754311816590655490" id="message-754311816590655490" title="Message sent: 12-Sep-20 08:05 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Already explained in private</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="754314868269514792" id="message-754314868269514792" title="Message sent: 12-Sep-20 08:17 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">No</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754315104983449680" id="message-754315104983449680" title="Message sent: 12-Sep-20 08:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I’ll figure it out eventually</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:44 PM</span>
+
+            <div class="chatlog__message " data-message-id="754321601079541825" id="message-754321601079541825" title="Message sent: 12-Sep-20 08:44 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hmm</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754321712451158088" id="message-754321712451158088" title="Message sent: 12-Sep-20 08:45 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Uhh</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="754323871242387617" id="message-754323871242387617" title="Message sent: 12-Sep-20 08:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">uhm did that work?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="754323903051989034" id="message-754323903051989034" title="Message sent: 12-Sep-20 08:53 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">&#196;h yes very good</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/725321317519458345/62a513fb03d7a63701c38fa0b3c22908.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Kyookunoomu#6914" data-user-id="725321317519458345" style="">Kyookunoomu</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:54 PM</span>
+
+            <div class="chatlog__message " data-message-id="754323975814905896" id="message-754323975814905896" title="Message sent: 12-Sep-20 08:54 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">thank you</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">12-Sep-20 08:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="754324458637885560" id="message-754324458637885560" title="Message sent: 12-Sep-20 08:56 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Hold on can we rename Small police department, neighborhood police department</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754324516393582622" id="message-754324516393582622" title="Message sent: 12-Sep-20 08:56 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">And medium police department just Police department</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754324583976271913" id="message-754324583976271913" title="Message sent: 12-Sep-20 08:56 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">And capital police department Police Headquarters</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="754325799045431408" id="message-754325799045431408" title="Message sent: 12-Sep-20 09:01 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1VZilnRqJm_pdZxxByTZ9h0HGtES1XedX18BB4sADqiQ/edit?usp=drivesdk">https://docs.google.com/document/d/1VZilnRqJm_pdZxxByTZ9h0HGtES1XedX18BB4sADqiQ/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1VZilnRqJm_pdZxxByTZ9h0HGtES1XedX18BB4sADqiQ/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//007//PFA] Police Funding Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District    Policy #7 September 12th,2020 Police Funding Act Council Member Big AOT Fan Effective: Progressive Description: To further fund the Police Force and to improve its coverage by building more detainment centers and Police stations in the district of Voopmont...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/XDt3kgXC6B0uPq5WrLY0g6XMDWMYWzHFhOnZN3vxKXs/https/lh4.googleusercontent.com/OkXgvfCtFnXJ0mhCzxihuL4PZ9TT06s3y57Psja5oGumvzc6IvNBSWUdBteMFurvk0cJpunhrQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/XDt3kgXC6B0uPq5WrLY0g6XMDWMYWzHFhOnZN3vxKXs/https/lh4.googleusercontent.com/OkXgvfCtFnXJ0mhCzxihuL4PZ9TT06s3y57Psja5oGumvzc6IvNBSWUdBteMFurvk0cJpunhrQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="754325921170980924" id="message-754325921170980924" title="Message sent: 12-Sep-20 09:01 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Submitted by <span class="mention" title="Kyookunoomu#6914">@Kyookunoomu</span></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">13-Sep-20 03:00 PM</span>
+
+            <div class="chatlog__message " data-message-id="754597391319040053" id="message-754597391319040053" title="Message sent: 13-Sep-20 03:00 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1Mpum6DDQX3C-Ryg4Fuh5pNqo6hX9HxzzITZo_BtsQK8/edit?usp=drivesdk">https://docs.google.com/document/d/1Mpum6DDQX3C-Ryg4Fuh5pNqo6hX9HxzzITZo_BtsQK8/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1Mpum6DDQX3C-Ryg4Fuh5pNqo6hX9HxzzITZo_BtsQK8/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//008//BLA] Business Loan Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #8 August 13th, 2020 Business Loan Act Governor Comrade Chris  Effective Immediately Description:It is mandatory for businesses to have 100k credits to be allowed on the stock market according to the MOF. So to encourage more businesses to be created ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/warQbobQk42VaJcIHh5x7fJ8XX-EVR2SRZ-BHiVLAIE/https/lh6.googleusercontent.com/ys9kvU-nfJUjmBOE3qH5zTz5f5Frudo8M_XsMkiZOhMjUpv-z7Kfh4FP6twcrcuYBkVAgbnkXw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/warQbobQk42VaJcIHh5x7fJ8XX-EVR2SRZ-BHiVLAIE/https/lh6.googleusercontent.com/ys9kvU-nfJUjmBOE3qH5zTz5f5Frudo8M_XsMkiZOhMjUpv-z7Kfh4FP6twcrcuYBkVAgbnkXw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/535209261446463498/a_5161b7ef4268e8dc6b59a1885db73ede.gif?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="willywonkapants#0069" data-user-id="535209261446463498" style="color: rgb(7,0,0)">willywonkapants</span>
+
+
+        <span class="chatlog__timestamp">14-Sep-20 10:22 PM</span>
+
+            <div class="chatlog__message " data-message-id="755070985471918120" id="message-755070985471918120" title="Message sent: 14-Sep-20 10:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/193IhrLW_5ESTRH0KfE9KoJWZfvBBd3p2FMYk5l9kWhM/edit?usp=sharing">https://docs.google.com/document/d/193IhrLW_5ESTRH0KfE9KoJWZfvBBd3p2FMYk5l9kWhM/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/193IhrLW_5ESTRH0KfE9KoJWZfvBBd3p2FMYk5l9kWhM/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//009//W&amp;SA]</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #9 September 13th, 2020 Welfare &amp; Subsidies Act Council Member A Human  Effective Immediately Description: This bill will provide welfare for the poor and to provide Subsidies for businesses. Law SEC. 1: Short Name VPT//009//W&amp;SA SEC. 2: Department of...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/7KceESd6O3prWwOUmhWKZROx-oDjiSBWmpRS5LHw95Q/https/lh3.googleusercontent.com/Gw8lg3BvCxqkVvkkLgeLnUT0djYH68V1wUdnv6bzVWuEN9ILxUSkhNc0rEB136kL02fmdCJFvg%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/7KceESd6O3prWwOUmhWKZROx-oDjiSBWmpRS5LHw95Q/https/lh3.googleusercontent.com/Gw8lg3BvCxqkVvkkLgeLnUT0djYH68V1wUdnv6bzVWuEN9ILxUSkhNc0rEB136kL02fmdCJFvg%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">14-Sep-20 10:25 PM</span>
+
+            <div class="chatlog__message " data-message-id="755071621491851334" id="message-755071621491851334" title="Message sent: 14-Sep-20 10:25 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1Sr46vwbhMm_bQviFb29RYD7CI3JpviFI88bwZVcgW3g/edit?usp=sharing">https://docs.google.com/document/d/1Sr46vwbhMm_bQviFb29RYD7CI3JpviFI88bwZVcgW3g/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1Sr46vwbhMm_bQviFb29RYD7CI3JpviFI88bwZVcgW3g/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//010//DCRA] District Council Reformation Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9 - 14 - 2020   District Council Reformation Act Created By: Senator Taz    TITLE I - District Council Reformation Act  SECTION I - SHORT NAME DCRA  SECTION II - INFORMATION Summary of this Policy: The DCRA will reform the District Council. It is not an amendment to t...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/fv1pc6kAM-GQgJKnhSDLYtZ6Rbi-7HnovK2rzJJTZEU/https/lh4.googleusercontent.com/kgcRxxg-fAqLYJcLxAX8nszdEeLI12pIL_cOueWyG3B8owfL_1Zt9GyiMgfr_l5k_BrflBTorQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/fv1pc6kAM-GQgJKnhSDLYtZ6Rbi-7HnovK2rzJJTZEU/https/lh4.googleusercontent.com/kgcRxxg-fAqLYJcLxAX8nszdEeLI12pIL_cOueWyG3B8owfL_1Zt9GyiMgfr_l5k_BrflBTorQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">17-Sep-20 02:03 AM</span>
+
+            <div class="chatlog__message " data-message-id="755851401309192276" id="message-755851401309192276" title="Message sent: 17-Sep-20 02:03 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1vsvCY5ARFFTkHTc2zvMXd_128Yfc4RHCDiczakz-cqE/edit?usp=sharing">https://docs.google.com/document/d/1vsvCY5ARFFTkHTc2zvMXd_128Yfc4RHCDiczakz-cqE/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1vsvCY5ARFFTkHTc2zvMXd_128Yfc4RHCDiczakz-cqE/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//003-1//DBTAA] District Bill Tag Act Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9 - 15 - 2020   District Bill Tag Act Amendment Created By: Senator Taz    TITLE I - District Bill Tag Act Amendment  SECTION I - SHORT NAME DBTAA  SECTION II - INFORMATION Summary of this Policy: The District Bill Tag Act Amendment shall nullify the previous DBTA and...</div>
+                                            </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">17-Sep-20 07:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="756118150751453266" id="message-756118150751453266" title="Message sent: 17-Sep-20 07:43 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/14PunSn5H9Ksi0aP6Yx4G1llZR7MEqTJ_7vzZXtgGu5U/edit?usp=sharing">https://docs.google.com/document/d/14PunSn5H9Ksi0aP6Yx4G1llZR7MEqTJ_7vzZXtgGu5U/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/14PunSn5H9Ksi0aP6Yx4G1llZR7MEqTJ_7vzZXtgGu5U/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//002-1//GPAA] Governor Position Act Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9 - 16 - 2020   Governor Position Act Amendment Created By: Senator Taz    TITLE I - Governor Position Act Amendment  SECTION I - SHORT NAME GPAA  SECTION II - INFORMATION Summary of this Policy: The GPAA does not nullify the entirety of the GPA. Only Secton IV is to ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/9dh_pMSFrVheVA1QkuFwU5bG3KNDRXkE0kbl5dMYbZg/https/lh4.googleusercontent.com/S6dLdUG5Lzx3Xezo4dZXwazU96i7qDWWfe-WbBD9_OVq3akGfIhbRyXaEl0Kylpu-kukbVFhJQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/9dh_pMSFrVheVA1QkuFwU5bG3KNDRXkE0kbl5dMYbZg/https/lh4.googleusercontent.com/S6dLdUG5Lzx3Xezo4dZXwazU96i7qDWWfe-WbBD9_OVq3akGfIhbRyXaEl0Kylpu-kukbVFhJQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">18-Sep-20 11:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="756539112084996209" id="message-756539112084996209" title="Message sent: 18-Sep-20 11:36 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1A38ayptWLNuKj9ipdGPQkVkfwbJnSD6FBeQBC8cf5EY/edit?usp=sharing">https://docs.google.com/document/d/1A38ayptWLNuKj9ipdGPQkVkfwbJnSD6FBeQBC8cf5EY/edit?usp=sharing</a>
+
+<a href="https://docs.google.com/document/d/16QI7SIDvtHtC4TN762JRySo8OfNz32a3WmrbYSpkgPk/edit?usp=sharing">https://docs.google.com/document/d/16QI7SIDvtHtC4TN762JRySo8OfNz32a3WmrbYSpkgPk/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1A38ayptWLNuKj9ipdGPQkVkfwbJnSD6FBeQBC8cf5EY/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//011//CIA] Citizen Inclusion Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9 - 17 - 2020   Citizen Inclusion Act Created By: Senator Taz    TITLE I - Citizen Initiative Act  SECTION I - SHORT NAME CIA  SECTION II - INFORMATION Summary of this Policy: The Citizen Inclusion Act enables Voopmont citizens to write Petitions for government change...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/a5GeTCiOrd6FJtPcD3Riw7nRYSzMfO-zbdSswGge9dc/https/lh6.googleusercontent.com/waWsmgwKKC0Ougu0QzQkYOpcf_mj8k8w8uis7m2jd-8z1LckBFB7Qvw6pTBDab--He-7-QbDTw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/a5GeTCiOrd6FJtPcD3Riw7nRYSzMfO-zbdSswGge9dc/https/lh6.googleusercontent.com/waWsmgwKKC0Ougu0QzQkYOpcf_mj8k8w8uis7m2jd-8z1LckBFB7Qvw6pTBDab--He-7-QbDTw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/16QI7SIDvtHtC4TN762JRySo8OfNz32a3WmrbYSpkgPk/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//010-1//DCRAA] District Council Reformation Act Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9 - 15 - 2020   District Council Reformation Act Amendment Created By: Senator Taz    TITLE I - District Council Reformation Act Amendment  SECTION I - SHORT NAME DCRAA  SECTION II - INFORMATION Summary of this Policy: The DCRAA will NOT nullify the DCRA, but will ins...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/eG8XKWaHSY_IP_-hdlJFiUfD1b6PX_IU0KUH48uJlBg/https/lh4.googleusercontent.com/62BXTSUR9si40h2u6Ars47XgMYQoOCqFZQbc8n3qpJeTpRFtTIWLVCIfiWiNcz7Yey6tVeCZ5A%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/eG8XKWaHSY_IP_-hdlJFiUfD1b6PX_IU0KUH48uJlBg/https/lh4.googleusercontent.com/62BXTSUR9si40h2u6Ars47XgMYQoOCqFZQbc8n3qpJeTpRFtTIWLVCIfiWiNcz7Yey6tVeCZ5A%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="756539217781457031" id="message-756539217781457031" title="Message sent: 18-Sep-20 11:36 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Voting starts after governor elections</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">26-Sep-20 09:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="759405761112965162" id="message-759405761112965162" title="Message sent: 26-Sep-20 09:27 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1mh7sCdPMdRIy7AK1CgWz-e_oDc6ln8fA9kH1HnXTr5g/edit?usp=sharing">https://docs.google.com/document/d/1mh7sCdPMdRIy7AK1CgWz-e_oDc6ln8fA9kH1HnXTr5g/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1mh7sCdPMdRIy7AK1CgWz-e_oDc6ln8fA9kH1HnXTr5g/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//012//WRA] Welfare Repeal Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 9/26/2020   WELFARE REPEAL ACT Created By: Council Member Synthion    TITLE I - WELFARE REPEAL ACT  SECTION I - SHORT NAME WRA  SECTION II - INFORMATION Summary of this Policy: This policy aims to remove Welfare from Voopmont as it is unnecessary and not needed.     W...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/ns1v-ytuNY_G_YtxhorIyhzVqxl5wA1n2VYPU7f4I8E/https/lh5.googleusercontent.com/LgD8Esrwp34RzCWZPI9_uaqsKaXmgreHj8woutt0I6I4K_lJjAkvAD2sRqUp_3h9BZpbAWZmOw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/ns1v-ytuNY_G_YtxhorIyhzVqxl5wA1n2VYPU7f4I8E/https/lh5.googleusercontent.com/LgD8Esrwp34RzCWZPI9_uaqsKaXmgreHj8woutt0I6I4K_lJjAkvAD2sRqUp_3h9BZpbAWZmOw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">27-Sep-20 06:47 AM</span>
+
+            <div class="chatlog__message " data-message-id="759546671910092862" id="message-759546671910092862" title="Message sent: 27-Sep-20 06:47 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Coolio youre not on the council and cant submit bills but i will propose this on your behalf</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">27-Sep-20 06:49 AM</span>
+
+            <div class="chatlog__message " data-message-id="759547108645928970" id="message-759547108645928970" title="Message sent: 27-Sep-20 06:49 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">erm dude</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="759547117202833441" id="message-759547117202833441" title="Message sent: 27-Sep-20 06:49 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">it&#39;s my bill</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/535209261446463498/a_5161b7ef4268e8dc6b59a1885db73ede.gif?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="willywonkapants#0069" data-user-id="535209261446463498" style="color: rgb(7,0,0)">willywonkapants</span>
+
+
+        <span class="chatlog__timestamp">27-Sep-20 08:09 AM</span>
+
+            <div class="chatlog__message " data-message-id="759567414463299667" id="message-759567414463299667" title="Message sent: 27-Sep-20 08:09 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">But your not a council member yet</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">29-Sep-20 10:21 PM</span>
+
+            <div class="chatlog__message " data-message-id="760506663840383036" id="message-760506663840383036" title="Message sent: 29-Sep-20 10:21 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Create a new document and edit with others at the same time -- from your computer, phone or tablet. Get stuff done with or without an internet connection. Use Docs to edit Word files. Free from Google.</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="flushed">
+                                <img class="emoji emoji--small" alt="&#128563;" src="https://twemoji.maxcdn.com/2/svg/1f633.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MEE6#4876" data-user-id="159985870458322944" style="color: rgb(134,142,146)">MEE6</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">29-Sep-20 10:21 PM</span>
+
+            <div class="chatlog__message " data-message-id="760506664767717396" id="message-760506664767717396" title="Message sent: 29-Sep-20 10:21 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">GG <span class="mention" title="Comrade Chris#9088">@is typing</span>, you just advanced to level 5!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">29-Sep-20 10:22 PM</span>
+
+            <div class="chatlog__message " data-message-id="760506692143808553" id="message-760506692143808553" title="Message sent: 29-Sep-20 10:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">STUPID COPY</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="760506897962237982" id="message-760506897962237982" title="Message sent: 29-Sep-20 10:22 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1qGb7lh5OYykqMkcby50pNaTbWuxJ_iSw6dpa-H9_ak8/edit?usp=drivesdk">https://docs.google.com/document/d/1qGb7lh5OYykqMkcby50pNaTbWuxJ_iSw6dpa-H9_ak8/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1qGb7lh5OYykqMkcby50pNaTbWuxJ_iSw6dpa-H9_ak8/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VPT//013//CDA] Council Dissolution Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  Policy #13 29 SEPTEMBER 2020 Council Dissolution Act Senator Taz  Effective (immediately, or specific date) Description: This act dissolves the Council and allows all Voopmontian residents the rights to vote and submit bills freely  Short Title This Act may ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/qtd7d8SyiHByoMAZx6G9KVzloR16aYrtzQmqIFE8FUc/https/lh4.googleusercontent.com/6bfzhP3vDUI3gY3IQ1S-cx8VfWPL6OL70nKawiiTU8m27BnSCjbTtIc33sTwtMRWU5ReAAqsKQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/qtd7d8SyiHByoMAZx6G9KVzloR16aYrtzQmqIFE8FUc/https/lh4.googleusercontent.com/6bfzhP3vDUI3gY3IQ1S-cx8VfWPL6OL70nKawiiTU8m27BnSCjbTtIc33sTwtMRWU5ReAAqsKQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">01-Oct-20 08:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="761207585570422804" id="message-761207585570422804" title="Message sent: 01-Oct-20 08:47 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Proposed by Synthion</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="761207851980423208" id="message-761207851980423208" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Ohhhhh</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="761207877544706098" id="message-761207877544706098" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">But then</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="761207910524125185" id="message-761207910524125185" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Just vote the system previously?</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="761207917289537556" id="message-761207917289537556" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Idk</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Oct-20 08:48 PM</span>
+
+            <div class="chatlog__message " data-message-id="761207940187029504" id="message-761207940187029504" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">that system has been repealed</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">01-Oct-20 08:48 PM</span>
+
+            <div class="chatlog__message " data-message-id="761208018385240094" id="message-761208018385240094" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Oh so you want to let Taz decide directly</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="761208029663723560" id="message-761208029663723560" title="Message sent: 01-Oct-20 08:48 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">I see ok</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">01-Oct-20 08:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="761208502135160892" id="message-761208502135160892" title="Message sent: 01-Oct-20 08:50 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">well there&#39;s no other system atm</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">02-Oct-20 08:48 AM</span>
+
+            <div class="chatlog__message " data-message-id="761389189505089556" id="message-761389189505089556" title="Message sent: 02-Oct-20 08:48 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1SAMuHnrItF3R5EZqc2I_5zRIx--zAoTvSdoP1759K6o/edit?usp=sharing">https://docs.google.com/document/d/1SAMuHnrItF3R5EZqc2I_5zRIx--zAoTvSdoP1759K6o/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1SAMuHnrItF3R5EZqc2I_5zRIx--zAoTvSdoP1759K6o/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//013//PVA] People&#39;s Voting Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont 10/1/2020   People’s Voting Act Created By: Synthion     TITLE I - PEOPLE’S VOTING ACT  SECTION I - SHORT NAME PVA  SECTION II - INFORMATION Summary of this Policy: The People’s Voting Act will specify what exactly the people of Voopmont will be allowed to propose and...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/uj7asplozAlZh49-G95_U4CdS6mWFMXS9_PnXeqkf7A/https/lh4.googleusercontent.com/HBlLlYS5CtzPZaQ0MrT72-dTZwU7lgczdWHO-vuRLuvDax6H1v8nLkQPc4YvdP3_L8FzgL1rVA%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/uj7asplozAlZh49-G95_U4CdS6mWFMXS9_PnXeqkf7A/https/lh4.googleusercontent.com/HBlLlYS5CtzPZaQ0MrT72-dTZwU7lgczdWHO-vuRLuvDax6H1v8nLkQPc4YvdP3_L8FzgL1rVA%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="threeeyedthink">
+                                <img class="emoji emoji--small" alt="threeeyedthink" src="https://cdn.discordapp.com/emojis/463767300705746944.png" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction" title="confused">
+                                <img class="emoji emoji--small" alt="&#128533;" src="https://twemoji.maxcdn.com/2/svg/1f615.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">28-Oct-20 09:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="771001176199004200" id="message-771001176199004200" title="Message sent: 28-Oct-20 09:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1zsCit_p5rCH91OC5DPbIYyMvQfqoPsjRyr-buSK59g4/edit?usp=sharing">https://docs.google.com/document/d/1zsCit_p5rCH91OC5DPbIYyMvQfqoPsjRyr-buSK59g4/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1zsCit_p5rCH91OC5DPbIYyMvQfqoPsjRyr-buSK59g4/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//014//PFAR] Police Funding Act Revision</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont October 26, 2020   Police Funding Act Revision Created By: Governor Taz    TITLE I - Police Funding Act Revision  SECTION I - SHORT NAME PFAR  SECTION II - INFORMATION Summary of this Policy:  Revamps the entirety of the Police Funding Act to ensure the Voopmont P.D. ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/9bOBJC2wgcsKcWyqTOTNwXAfCa1NgJMVpx32GzQYkng/https/lh5.googleusercontent.com/OSlIhcNuKlYEZeZAeuvMyHa99NmnWxHSUuW2M3XF1NwmcF_jPkGrFBwjSpPIZecrHgDpRep38w%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/9bOBJC2wgcsKcWyqTOTNwXAfCa1NgJMVpx32GzQYkng/https/lh5.googleusercontent.com/OSlIhcNuKlYEZeZAeuvMyHa99NmnWxHSUuW2M3XF1NwmcF_jPkGrFBwjSpPIZecrHgDpRep38w%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="771001184911622164" id="message-771001184911622164" title="Message sent: 28-Oct-20 09:23 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">poggers</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">28-Oct-20 09:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="771001895485440030" id="message-771001895485440030" title="Message sent: 28-Oct-20 09:26 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji emoji--large" alt="Pog" title="Pog" src="https://cdn.discordapp.com/emojis/754530403666231317.png"></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">29-Oct-20 11:33 PM</span>
+
+            <div class="chatlog__message " data-message-id="771396347873067038" id="message-771396347873067038" title="Message sent: 29-Oct-20 11:33 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>this is a serious bill i swear</em>
+<a href="https://docs.google.com/document/d/1vISgQjOIesvjX4YyHHZeWIM-Qk6nsaZXIajQhBy3sgI/edit?usp=sharing">https://docs.google.com/document/d/1vISgQjOIesvjX4YyHHZeWIM-Qk6nsaZXIajQhBy3sgI/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1vISgQjOIesvjX4YyHHZeWIM-Qk6nsaZXIajQhBy3sgI/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//015//DDA] Doomslayer Definition Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont October 29, 2020   Doomslayer Recognition Act Created By: Governor Taz    TITLE I - Doomslayer Definition Act  SECTION I - SHORT NAME DDA  SECTION II - INFORMATION Summary of this Policy:  Defines the Voopmont Doomslayer as a tactic of counterterrorism and a defense s...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/XDFAVD4Y0QKYIS04lj4v0rHRZUMzpi2S5aKHk8Hk6Ig/https/lh6.googleusercontent.com/zwWFev1uyeSQGV5YSucB-RUx5eWF5rwIzv4CFv8pw3OkjMyFMt8C2GSMluxhstvNjdMnes3_bw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/XDFAVD4Y0QKYIS04lj4v0rHRZUMzpi2S5aKHk8Hk6Ig/https/lh6.googleusercontent.com/zwWFev1uyeSQGV5YSucB-RUx5eWF5rwIzv4CFv8pw3OkjMyFMt8C2GSMluxhstvNjdMnes3_bw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/535209261446463498/a_5161b7ef4268e8dc6b59a1885db73ede.gif?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="willywonkapants#0069" data-user-id="535209261446463498" style="color: rgb(7,0,0)">willywonkapants</span>
+
+
+        <span class="chatlog__timestamp">17-Nov-20 12:56 AM</span>
+
+            <div class="chatlog__message " data-message-id="777940079909797949" id="message-777940079909797949" title="Message sent: 17-Nov-20 12:56 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/14cfQUzDd4T6u1dUA4BPA6AoOJ4pUo2nRh8jQnOjD4Ak/edit?usp=sharing">https://docs.google.com/document/d/14cfQUzDd4T6u1dUA4BPA6AoOJ4pUo2nRh8jQnOjD4Ak/edit?usp=sharing</a></span>
+
+                                <span class="chatlog__edited-timestamp" title="17-Nov-20 12:56 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/14cfQUzDd4T6u1dUA4BPA6AoOJ4pUo2nRh8jQnOjD4Ak/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//016//IAA] Icelesia Autonomy Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont November 16, 2020   Icelesia Autonomy Acts Created By: willywonkapants    TITLE I - Icelesia Automnomy Act  SECTION I - SHORT NAME IAA  SECTION II - INFORMATION Summary of this Policy:  Increases the amount of autonomy Icelesia has from Voopmont by establishing a desi...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/xgN6qJ2-UmEuhByYcXdBIh5Qq-1X6742tifsgxf9N2o/https/lh6.googleusercontent.com/CG8bqKyLAZ_hLNsp9b8aXSDOn83c1ZCdi5CmykcQvNNrv2FrxqBXYcBYf6ji7Jfz-P4KLdT06w%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/xgN6qJ2-UmEuhByYcXdBIh5Qq-1X6742tifsgxf9N2o/https/lh6.googleusercontent.com/CG8bqKyLAZ_hLNsp9b8aXSDOn83c1ZCdi5CmykcQvNNrv2FrxqBXYcBYf6ji7Jfz-P4KLdT06w%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="eyes">
+                                <img class="emoji emoji--small" alt="&#128064;" src="https://twemoji.maxcdn.com/2/svg/1f440.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">17-Nov-20 06:03 AM</span>
+
+            <div class="chatlog__message " data-message-id="778017434040008754" id="message-778017434040008754" title="Message sent: 17-Nov-20 06:03 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong>Timezone Change Vote</strong>
+Change the Voopmont Timezone to -6. Landing Cove&#39;s timezone is -6, and we are right on top of it, so it makes sense for us to share their timezone.</span>
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="https://cdn.discordapp.com/attachments/751187212762218599/778017431372431430/realmap.png">
+                                <img class="chatlog__attachment-media" src="https://cdn.discordapp.com/attachments/751187212762218599/778017431372431430/realmap.png" alt="Image attachment" title="Image: realmap.png (107.27 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">17-Nov-20 10:28 AM</span>
+
+            <div class="chatlog__message " data-message-id="778084008030240808" id="message-778084008030240808" title="Message sent: 17-Nov-20 10:28 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Yeah it makes 0 sense we have different times one when we’re right above the</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MEE6#4876" data-user-id="159985870458322944" style="color: rgb(134,142,146)">MEE6</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Nov-20 10:28 AM</span>
+
+            <div class="chatlog__message " data-message-id="778084008768307211" id="message-778084008768307211" title="Message sent: 17-Nov-20 10:28 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">GG <span class="mention" title="TheTazMann#2241">@Taz | Coomslayer</span>, you just advanced to level 13!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">17-Nov-20 10:28 AM</span>
+
+            <div class="chatlog__message " data-message-id="778084018574983169" id="message-778084018574983169" title="Message sent: 17-Nov-20 10:28 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Then</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="778084031219630140" id="message-778084031219630140" title="Message sent: 17-Nov-20 10:28 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">They</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="778084043764924426" id="message-778084043764924426" title="Message sent: 17-Nov-20 10:28 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Them</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Deleted User#0000" data-user-id="456226577798135808" style="">Deleted User</span>
+
+
+        <span class="chatlog__timestamp">04-Dec-20 02:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="784312227384655882" id="message-784312227384655882" title="Message sent: 04-Dec-20 02:56 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Motion to activate the Doomslayer to send in Medievala.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/115191919708995586/26364216d5efeac67647c8193955e8a1.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="TheTazMann#2241" data-user-id="115191919708995586" style="color: rgb(215,52,42)">Taz | Coomslayer</span>
+
+
+        <span class="chatlog__timestamp">04-Dec-20 10:29 PM</span>
+
+            <div class="chatlog__message " data-message-id="784426277943115827" id="message-784426277943115827" title="Message sent: 04-Dec-20 10:29 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Motion for the Senator and Governor to contact the VSS regarding my existence. I feel that in the event I am deployed to Medievala, working with the VSS will increase efficiency. Not to mention, working with the VSS will help me protect citizens on a national scale.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/450771368032731168/e44ed1838ed5cb72a5ccf816910d5fcb.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Yeeet#5208" data-user-id="450771368032731168" style="">Yeeet</span>
+
+
+        <span class="chatlog__timestamp">22-May-21 01:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="845536916233125908" id="message-845536916233125908" title="Message sent: 22-May-21 01:41 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">A bill making it illegal to kill the endangered Icelesian Giant Rabbit</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">22-May-21 05:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="845589444105994250" id="message-845589444105994250" title="Message sent: 22-May-21 05:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><em>puts away rabbit stew</em></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="845589523236913162" id="message-845589523236913162" title="Message sent: 22-May-21 05:10 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Make that critically endangered Icelesian Giant Rabbit</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/450771368032731168/e44ed1838ed5cb72a5ccf816910d5fcb.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Yeeet#5208" data-user-id="450771368032731168" style="">Yeeet</span>
+
+
+        <span class="chatlog__timestamp">22-May-21 11:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="845683602834718721" id="message-845683602834718721" title="Message sent: 22-May-21 11:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://tenor.com/view/hamster-shocked-afraid-gif-13368273">https://tenor.com/view/hamster-shocked-afraid-gif-13368273</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/TYArlFrr9P-CEH9cCanGlKqNLVF4JSonOoWw-HGC2I0/https/media.tenor.co/images/79c6f4533e13f63dc1a31921219380f3/tenor.png">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/TYArlFrr9P-CEH9cCanGlKqNLVF4JSonOoWw-HGC2I0/https/media.tenor.co/images/79c6f4533e13f63dc1a31921219380f3/tenor.png" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/159985870458322944/b50adff099924dd5e6b72d13f77eb9d7.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="MEE6#4876" data-user-id="159985870458322944" style="color: rgb(134,142,146)">MEE6</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">22-May-21 11:24 PM</span>
+
+            <div class="chatlog__message " data-message-id="845683605765619752" id="message-845683605765619752" title="Message sent: 22-May-21 11:24 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">GG <span class="mention" title="Yeeet#5208">@Yeeet</span>, you just advanced to level 2!</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/798544167377960960/826cb4216ecd7f6d34f5033521935147.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="syntholion#6924" data-user-id="798544167377960960" style="color: rgb(247,48,48)">synth</span>
+
+
+        <span class="chatlog__timestamp">28-Jul-21 11:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="869961114585288784" id="message-869961114585288784" title="Message sent: 28-Jul-21 11:14 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Motion to place all of the previous amendments and bills into effect once more, including the Constitution <span class="mention" title="droplt#4161">@droplt</span></span>
+
+                                <span class="chatlog__edited-timestamp" title="28-Jul-21 11:15 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/438508633903595542/a868eefb97f73ccbbb3c5c07f6a6cc54.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="✠ Red_Kaiser ✠#7719" data-user-id="438508633903595542" style="color: rgb(187,129,42)">✠ Red_Kaiser ✠</span>
+
+
+        <span class="chatlog__timestamp">29-Jul-21 03:26 AM</span>
+
+            <div class="chatlog__message " data-message-id="870024422826848277" id="message-870024422826848277" title="Message sent: 29-Jul-21 03:26 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Bueno <img loading="lazy" class="emoji " alt="👍" title="thumbsup" src="https://twemoji.maxcdn.com/2/svg/1f44d.svg"></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/656949835785830458/ae277d3e2cd9c9fc134fbc32950d26d9.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="droplt#4161" data-user-id="656949835785830458" style="color: rgb(187,129,42)">droplt</span>
+
+
+        <span class="chatlog__timestamp">02-Aug-21 11:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="871770016918417560" id="message-871770016918417560" title="Message sent: 02-Aug-21 11:02 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">wait</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="871770102754844762" id="message-871770102754844762" title="Message sent: 02-Aug-21 11:03 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">huh</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/438508633903595542/a868eefb97f73ccbbb3c5c07f6a6cc54.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="✠ Red_Kaiser ✠#7719" data-user-id="438508633903595542" style="color: rgb(187,129,42)">✠ Red_Kaiser ✠</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-21 12:45 AM</span>
+
+            <div class="chatlog__message " data-message-id="871795840086343691" id="message-871795840086343691" title="Message sent: 03-Aug-21 12:45 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Motion to build a monument to all of those who perished in the Falling Texas incident</span>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="emoji_16">
+                                <img class="emoji emoji--small" alt="emoji_16" src="https://cdn.discordapp.com/emojis/765012806302171176.png" loading="lazy">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/656949835785830458/ae277d3e2cd9c9fc134fbc32950d26d9.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="droplt#4161" data-user-id="656949835785830458" style="color: rgb(187,129,42)">droplt</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-21 01:10 AM</span>
+
+            <div class="chatlog__message " data-message-id="871802169987309648" id="message-871802169987309648" title="Message sent: 03-Aug-21 01:10 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">:lmao:</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/438508633903595542/a868eefb97f73ccbbb3c5c07f6a6cc54.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="✠ Red_Kaiser ✠#7719" data-user-id="438508633903595542" style="color: rgb(187,129,42)">✠ Red_Kaiser ✠</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-21 01:11 AM</span>
+
+            <div class="chatlog__message " data-message-id="871802434815684639" id="message-871802434815684639" title="Message sent: 03-Aug-21 01:11 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji emoji--large" alt="le_troll" title="le_troll" src="https://cdn.discordapp.com/emojis/871145702254837810.png"></span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/701944872843739257/c3e69a755433d7c1a56a062739064694.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Est.Chicago#8435" data-user-id="701944872843739257" style="color: rgb(7,0,0)">Est.Chicago</span>
+
+
+        <span class="chatlog__timestamp">09-Aug-21 02:52 AM</span>
+
+            <div class="chatlog__message " data-message-id="874002093558595584" id="message-874002093558595584" title="Message sent: 09-Aug-21 02:52 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit">https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit">
+                                                        <div class="markdown preserve-whitespace">The Icelesian Exit</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont August 4, 2021   Icelesian Exit Act Created By: Est.Chicago    TITLE I - Exit  SECTION I - Timeline of Exit   SECTION II - Terms and Conditions of Icelesias Exit        Timeline of Exit The exit will begin immediately after the merging or removal of any district. To the sedation or p...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/l6JiX0MgbalFHZZmlkK7s9mdBATZwoG5sNrAvVrBZgM/https/lh5.googleusercontent.com/cOAQGbNIHox6N0R_-0MEPJhU0MiR9EtB8U2TZ342EFeogr-C6J-0QF5IhVKCe-CgIyEcCu-ezJ2JVQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/l6JiX0MgbalFHZZmlkK7s9mdBATZwoG5sNrAvVrBZgM/https/lh5.googleusercontent.com/cOAQGbNIHox6N0R_-0MEPJhU0MiR9EtB8U2TZ342EFeogr-C6J-0QF5IhVKCe-CgIyEcCu-ezJ2JVQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/701944872843739257/c3e69a755433d7c1a56a062739064694.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Est.Chicago#8435" data-user-id="701944872843739257" style="color: rgb(7,0,0)">Est.Chicago</span>
+
+
+        <span class="chatlog__timestamp">15-Aug-21 12:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="876328946927546409" id="message-876328946927546409" title="Message sent: 15-Aug-21 12:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><span class="mention" title="asdia0#1556">@asdia</span> 
+
+<a href="https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit">https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1UQxM0kT4_y1GbO30UfTXtw1gG-9gacfZ-1AJFpBGL38/edit">
+                                                        <div class="markdown preserve-whitespace">The Icelesian Exit</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont August 4, 2021   Icelesian Exit Act Created By: Est.Chicago    TITLE I - Exit  SECTION I - Timeline of Exit   SECTION II - Terms and Conditions of Icelesias Exit        Timeline of Exit The exit will begin immediately after the merging or removal of any district. To the sedation or p...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/l6JiX0MgbalFHZZmlkK7s9mdBATZwoG5sNrAvVrBZgM/https/lh5.googleusercontent.com/cOAQGbNIHox6N0R_-0MEPJhU0MiR9EtB8U2TZ342EFeogr-C6J-0QF5IhVKCe-CgIyEcCu-ezJ2JVQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/l6JiX0MgbalFHZZmlkK7s9mdBATZwoG5sNrAvVrBZgM/https/lh5.googleusercontent.com/cOAQGbNIHox6N0R_-0MEPJhU0MiR9EtB8U2TZ342EFeogr-C6J-0QF5IhVKCe-CgIyEcCu-ezJ2JVQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="876328978007347270" id="message-876328978007347270" title="Message sent: 15-Aug-21 12:58 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Submitted again</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">15-Aug-21 02:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="876354052647170088" id="message-876354052647170088" title="Message sent: 15-Aug-21 02:38 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1EKA9nczeNYSJ6gkcNDfRVsa7k4Y0MHHcHzCQsDqmU3I/edit?usp=sharing">https://docs.google.com/document/d/1EKA9nczeNYSJ6gkcNDfRVsa7k4Y0MHHcHzCQsDqmU3I/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1EKA9nczeNYSJ6gkcNDfRVsa7k4Y0MHHcHzCQsDqmU3I/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Preservation of Bills</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  15 August 2021 Preservation of Bills Senator Asdia  All district bills, policies and motions that have passed and have not been repealed before 15 August 2021 shall remain to be part of Voopmont law.  END OF DOCUMENT</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/h_5zwU8yuDlvxCo_DOVwceGxxjIBq9XEgktKecXhoKc/https/lh5.googleusercontent.com/cl5cKo25TfCO7lP3g1HDNXv-OlYFwYHFCEYY3nXhZoOhEtnyHcqUwAIlBDFJ0ZNiwsOstiUa7-77bg%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/h_5zwU8yuDlvxCo_DOVwceGxxjIBq9XEgktKecXhoKc/https/lh5.googleusercontent.com/cl5cKo25TfCO7lP3g1HDNXv-OlYFwYHFCEYY3nXhZoOhEtnyHcqUwAIlBDFJ0ZNiwsOstiUa7-77bg%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">15-Aug-21 02:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="876354535273148416" id="message-876354535273148416" title="Message sent: 15-Aug-21 02:40 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1hOQ9VeaSHALLrA6lX6jSExXMlYcy8CYO0uDa4W7XXrY/edit?usp=sharing">https://docs.google.com/document/d/1hOQ9VeaSHALLrA6lX6jSExXMlYcy8CYO0uDa4W7XXrY/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1hOQ9VeaSHALLrA6lX6jSExXMlYcy8CYO0uDa4W7XXrY/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Icelesian Agreement Proposal</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont August 6, 2021   The Icelesian Agreement Proposal Created By: People’s Council    TITLE I - Terms of Agreement  SECTION I - Definition of Autonomy  SECTION II - Icelesian Government  SECTION III - Icelesian Self-Defence Force  SECTION V - Icelesian Economy  Definition of Autonomy Ice...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/WhQjOvdVVo-XGsDx-0-zdWSWtqvgFLLn7kScSwbeXFA/https/lh4.googleusercontent.com/3vfmNkDgfIKlMUvAXBrcJgsphPUuWc6dfJ6HZ8epKEceiX0QEoPCbPvcUiIqJzcVV-_rXu79_zAc6Q%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/WhQjOvdVVo-XGsDx-0-zdWSWtqvgFLLn7kScSwbeXFA/https/lh4.googleusercontent.com/3vfmNkDgfIKlMUvAXBrcJgsphPUuWc6dfJ6HZ8epKEceiX0QEoPCbPvcUiIqJzcVV-_rXu79_zAc6Q%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">19-Aug-21 06:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="877854912464187402" id="message-877854912464187402" title="Message sent: 19-Aug-21 06:02 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1cupUMtDpUXURWK7vXaHpZsHIiIkjDqrRR5RxDH2Vm2o/edit?usp=sharing">https://docs.google.com/document/d/1cupUMtDpUXURWK7vXaHpZsHIiIkjDqrRR5RxDH2Vm2o/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1cupUMtDpUXURWK7vXaHpZsHIiIkjDqrRR5RxDH2Vm2o/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Jail Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  19 August 2021 Jail Act Senator Asdia0  Effective immediately Description: This act aims to improve the living conditions of convicts in jail.  DEFINITIONS “Convict” means “a person that has been declared to be guilty of an offense according to federal or Voopmont law”. “Seri...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/Tw-5Lx5dbkp20NkLMht9rgVGCTUFDER-brBCrv2r-t0/https/lh5.googleusercontent.com/ptkXzxd4fbBruUGJrwCwrysAMHN4Wg0KQDwgKp6j6xKiZScVT1FrXFr-K0ArxrZd57AIOnhg9jmQqg%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/Tw-5Lx5dbkp20NkLMht9rgVGCTUFDER-brBCrv2r-t0/https/lh5.googleusercontent.com/ptkXzxd4fbBruUGJrwCwrysAMHN4Wg0KQDwgKp6j6xKiZScVT1FrXFr-K0ArxrZd57AIOnhg9jmQqg%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">19-Aug-21 06:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="877859025700655156" id="message-877859025700655156" title="Message sent: 19-Aug-21 06:18 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1LHoI5LIesAMPfU5_AtlvlN0WEme0heLQ52siu1MkUTg/edit?usp=sharing">https://docs.google.com/document/d/1LHoI5LIesAMPfU5_AtlvlN0WEme0heLQ52siu1MkUTg/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1LHoI5LIesAMPfU5_AtlvlN0WEme0heLQ52siu1MkUTg/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Mainland Economic Development Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  19 August 2021 Mainland Economic Development Act Senator Asdia0  Effective immediately Description: This act aims to provide a much-needed economic framework for mainland Voopmont. DEFINITIONS “Primary industry” means an industry that is mainly concerned with the acquisition o...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/4a40iuG4GAFD-lz_NAFI-qTZO4wSoYn9SPlTYNdAuZc/https/lh4.googleusercontent.com/mDSdW2nO7CitpKOhrDRhoUozPVBdi619WIlskjqiuZ3GS-0CaHNkNIm-znJEBN2tQuHAlI7asJfoVQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/4a40iuG4GAFD-lz_NAFI-qTZO4wSoYn9SPlTYNdAuZc/https/lh4.googleusercontent.com/mDSdW2nO7CitpKOhrDRhoUozPVBdi619WIlskjqiuZ3GS-0CaHNkNIm-znJEBN2tQuHAlI7asJfoVQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">19-Aug-21 09:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="877909671262978079" id="message-877909671262978079" title="Message sent: 19-Aug-21 09:39 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1v-q3ZN7HXk3TyE_-ArEwckYreWaVPsQ3hodEPk3BEhQ/edit?usp=sharing">https://docs.google.com/document/d/1v-q3ZN7HXk3TyE_-ArEwckYreWaVPsQ3hodEPk3BEhQ/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1v-q3ZN7HXk3TyE_-ArEwckYreWaVPsQ3hodEPk3BEhQ/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Farmland and Produce Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  19 August 2021 Farmland and Produce Act Governor Chris Effective immediately Description: This program allows for the repurpose of federal land in the Southern regions of Mainland Voopmont in order to be distributed to farmers to help Voopmont be self-sufficient in food produc...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/bVuSKu1brvl7hSm40CcP8GlNAnNp1g9uj_eKOt1JeOc/https/lh6.googleusercontent.com/bz6t--D1TBzq5urE4myALFfH7Mc00Sj-PM2HMkuIoEkg8pozXhUh6CxC6l7RmWRLLtBg-O6w4hdHLw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/bVuSKu1brvl7hSm40CcP8GlNAnNp1g9uj_eKOt1JeOc/https/lh6.googleusercontent.com/bz6t--D1TBzq5urE4myALFfH7Mc00Sj-PM2HMkuIoEkg8pozXhUh6CxC6l7RmWRLLtBg-O6w4hdHLw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/701944872843739257/c3e69a755433d7c1a56a062739064694.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Est.Chicago#8435" data-user-id="701944872843739257" style="color: rgb(7,0,0)">Est.Chicago</span>
+
+
+        <span class="chatlog__timestamp">28-Aug-21 04:35 AM</span>
+
+            <div class="chatlog__message " data-message-id="880913516033351740" id="message-880913516033351740" title="Message sent: 28-Aug-21 04:35 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1Vo4ndcp0h4wlAJjECeAEJbKY3l74VejbRy2FOQUXiJ4/edit">https://docs.google.com/document/d/1Vo4ndcp0h4wlAJjECeAEJbKY3l74VejbRy2FOQUXiJ4/edit</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1Vo4ndcp0h4wlAJjECeAEJbKY3l74VejbRy2FOQUXiJ4/edit">
+                                                        <div class="markdown preserve-whitespace">The Exit Amendment Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont August 24, 2021   Icelesian Exit Amendment Act Created By: Est.Chicago    TITLE I - Amendment  SECTION I - Eventualities Clause     Timeline of Exit This will add a new clause that pertains to possibilities of vooperian politics. This will be added onto Title II. The language of the ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/Uf8JTqX0BQe5HvPcOPg0ZdQ2IFLTVMAw3A0wz_Xn3SY/https/lh5.googleusercontent.com/S3H-4JtrUaBRhPeh1v88dMrv-94weiyh7RAAWSiVbrGu5IOMMNtq5YK3UXED1LFvJ734NtoLHHlvNA%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/Uf8JTqX0BQe5HvPcOPg0ZdQ2IFLTVMAw3A0wz_Xn3SY/https/lh5.googleusercontent.com/S3H-4JtrUaBRhPeh1v88dMrv-94weiyh7RAAWSiVbrGu5IOMMNtq5YK3UXED1LFvJ734NtoLHHlvNA%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">28-Aug-21 12:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="881037266972196865" id="message-881037266972196865" title="Message sent: 28-Aug-21 12:47 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1v0SXbNR0_hhf4DTUrHDkrl8HVNTwZ3FpCYrWJ9RLoWo/edit?usp=drivesdk">https://docs.google.com/document/d/1v0SXbNR0_hhf4DTUrHDkrl8HVNTwZ3FpCYrWJ9RLoWo/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1v0SXbNR0_hhf4DTUrHDkrl8HVNTwZ3FpCYrWJ9RLoWo/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">Infrastructure Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  26 August 2021 Infrastructure Act Governor Chris Effective immediately Description: This act will look into improving mainly mainland Voopmont’s infrastructure, including the construction of rail lines, metros, highways and airports DEFINITIONS We will be referring to the New ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/Cj9T8lsoZdspbs78_rKGf41ey7PBqruWPrWJZHPgrQc/https/lh6.googleusercontent.com/iD71Ck_Amgb94PGImzH3gOtQupuYMEigxhTlxT5seLP-A2d3N8RakKXEldA0ZFV3uxPgmtaAy43XOQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/Cj9T8lsoZdspbs78_rKGf41ey7PBqruWPrWJZHPgrQc/https/lh6.googleusercontent.com/iD71Ck_Amgb94PGImzH3gOtQupuYMEigxhTlxT5seLP-A2d3N8RakKXEldA0ZFV3uxPgmtaAy43XOQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/544816262128336906/2f4e63bdc091fee2f7d273ea41545005.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Comrade Chris#9088" data-user-id="544816262128336906" style="color: rgb(0,141,210)">is typing</span>
+
+
+        <span class="chatlog__timestamp">28-Aug-21 01:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="881050563352084490" id="message-881050563352084490" title="Message sent: 28-Aug-21 01:40 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1LlitGRCUdkN2wdZU9lnOWJtqXMVY3FxHzBBp65yXvYc/edit?usp=drivesdk">https://docs.google.com/document/d/1LlitGRCUdkN2wdZU9lnOWJtqXMVY3FxHzBBp65yXvYc/edit?usp=drivesdk</a>
+With permission from the senator</span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1LlitGRCUdkN2wdZU9lnOWJtqXMVY3FxHzBBp65yXvYc/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">Voopmont Constitution 1st Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont August 15, 2021   Voopmont Constitution 1st Amendment Created By: Governor Chris   SECTION I - Amendment to Section II, A.b  Amendment to Section II, A.b part ii. of Section II, A.b will be made.  It will say “However if the bill proposed by the Voopmontian People’s Council affects V...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/CcbP6ub3aoYrXjh0K031qskMFJhlCvP6csMv3LFGD8s/https/lh5.googleusercontent.com/ZTc5rBOfcf0MQxGCI1N0KhJaqXXUUh0Fq27ZtGZ-pBK-y7FvPUlMgi9NDhn2QOYTPnkthuLntU4crA%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/CcbP6ub3aoYrXjh0K031qskMFJhlCvP6csMv3LFGD8s/https/lh5.googleusercontent.com/ZTc5rBOfcf0MQxGCI1N0KhJaqXXUUh0Fq27ZtGZ-pBK-y7FvPUlMgi9NDhn2QOYTPnkthuLntU4crA%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">28-Aug-21 10:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="881180237084360755" id="message-881180237084360755" title="Message sent: 28-Aug-21 10:15 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1ChQEmZWXV7Kbwxi3yejAPE0fNoPzlGr9bX9GchkWV6A/edit?usp=sharing">https://docs.google.com/document/d/1ChQEmZWXV7Kbwxi3yejAPE0fNoPzlGr9bX9GchkWV6A/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1ChQEmZWXV7Kbwxi3yejAPE0fNoPzlGr9bX9GchkWV6A/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">Constitution of the District of Voopmont and Icelesia</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont and Icelesia 28/08/2021   CONSTITUTION OF  THE DISTRICT OF VOOPMONT AND ICELESIA     SECTION I - CITATION This constitution may be cited as the Constitution of the District of Voopmont and Icelesia.  SECTION II - INTERPRETATION In this Constitution, unless it is otherwise provided o...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/9-3Ku_g0ii4L0wdAtfwxm_axSSBTWluuBAxDAwzYHH4/https/lh5.googleusercontent.com/0QSuCIL3V2_BgiDXsrTn9uPImQNv4I18eg_yy7Qdfk0p42T_zpduCoXZKAgvlocgXqxB1pxBZBRXTQ%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/9-3Ku_g0ii4L0wdAtfwxm_axSSBTWluuBAxDAwzYHH4/https/lh5.googleusercontent.com/0QSuCIL3V2_BgiDXsrTn9uPImQNv4I18eg_yy7Qdfk0p42T_zpduCoXZKAgvlocgXqxB1pxBZBRXTQ%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">02-Sep-21 08:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="882961221995880488" id="message-882961221995880488" title="Message sent: 02-Sep-21 08:12 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1DzKMlkeh4ScshVSweYuT5A8NG_4OFDJNyPZ76xg3veI/edit?usp=sharing">https://docs.google.com/document/d/1DzKMlkeh4ScshVSweYuT5A8NG_4OFDJNyPZ76xg3veI/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1DzKMlkeh4ScshVSweYuT5A8NG_4OFDJNyPZ76xg3veI/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">The First Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Voopmont District  2 SEPTEMBER The First Amendment Senator Asdia0  Article III.III shall read as “There shall be no surrender or transfer, either wholly or in part, of the District, unless such a surrender or transfer has been approved by a two-thirds majority in the District Council.” END OF DO...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/psATNOhBZqurjdibLL6e_u7ZGYXURaeJ6_JgOnf7N4I/https/lh3.googleusercontent.com/DudEaQOzCr2rXQdseclIN6Wi0XZ_Dd2oVUvZE4i5hqFjF7-8vI8V0Lza-9oxxaWccS8KTcomL6iN9A%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/psATNOhBZqurjdibLL6e_u7ZGYXURaeJ6_JgOnf7N4I/https/lh3.googleusercontent.com/DudEaQOzCr2rXQdseclIN6Wi0XZ_Dd2oVUvZE4i5hqFjF7-8vI8V0Lza-9oxxaWccS8KTcomL6iN9A%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">02-Sep-21 08:31 PM</span>
+
+            <div class="chatlog__message " data-message-id="882965865308491816" id="message-882965865308491816" title="Message sent: 02-Sep-21 08:31 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/11gCYPnpzYrPjgvHRb1VSVR2s-_zg_73JpI8_j4ERHus/edit?usp=sharing">https://docs.google.com/document/d/11gCYPnpzYrPjgvHRb1VSVR2s-_zg_73JpI8_j4ERHus/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/11gCYPnpzYrPjgvHRb1VSVR2s-_zg_73JpI8_j4ERHus/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//027] The Second Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">District of Voopmont and Icelesia  2 SEPTEMBER The Second Amendment Senator Asdia0  Article III.V shall read as “Any Amendment to this Constitution must be passed by District Council with a two-thirds majority.” END OF DOCUMENT</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/isNwz_LoGLfxdE_Dg7KjOLpGQtzpj7HBA7R5KqIuvbE/https/lh5.googleusercontent.com/CUubA6ZByzAY1gm4SiTG3YE05rN2bdrv65pOpzOZ3R7x_i-lMmRCMTdpDGMAqBQ_V1Dr3k3hExAI5w%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/isNwz_LoGLfxdE_Dg7KjOLpGQtzpj7HBA7R5KqIuvbE/https/lh5.googleusercontent.com/CUubA6ZByzAY1gm4SiTG3YE05rN2bdrv65pOpzOZ3R7x_i-lMmRCMTdpDGMAqBQ_V1Dr3k3hExAI5w%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="882967309063450635" id="message-882967309063450635" title="Message sent: 02-Sep-21 08:36 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1ePKFlv5dQLmB5748B5i4GRf_H6OgpKTfwtyJ0TDEQ0I/edit?usp=sharing">https://docs.google.com/document/d/1ePKFlv5dQLmB5748B5i4GRf_H6OgpKTfwtyJ0TDEQ0I/edit?usp=sharing</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1ePKFlv5dQLmB5748B5i4GRf_H6OgpKTfwtyJ0TDEQ0I/edit?usp=sharing">
+                                                        <div class="markdown preserve-whitespace">[VPT//003-2//DBTAA] District Bill Tag Act Amendment Amendment</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">District of Voopmont and Icelesia  2 SEPTEMBER The Second Amendment Senator Asdia0  SECTION I - SHORT NAME DBTAAA  SECTION II - INFORMATION Summary of this Policy: The District Bill Tag Act Amendment Amendment shall amend VPT//003-1//DBTAA.    Article V.A of DBTAA shall read as “[VMI//###-@//SH...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-2.discordapp.net/external/hhiWXmRyHpGhQEGMMG3wiDtnBLPum1C5gQRduCv6ADw/https/lh4.googleusercontent.com/r4cg-1dr8S2YdpuY-d6sJRhIpO-bRUlz7uqYDMRq65JmJHKkXoVI95fOadumaxRwnMEdjLTu0GNukw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-2.discordapp.net/external/hhiWXmRyHpGhQEGMMG3wiDtnBLPum1C5gQRduCv6ADw/https/lh4.googleusercontent.com/r4cg-1dr8S2YdpuY-d6sJRhIpO-bRUlz7uqYDMRq65JmJHKkXoVI95fOadumaxRwnMEdjLTu0GNukw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/470203136771096596/dc83e006ea8c4e5ebb45f258060e1c41.png?size=128" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="asdia0#1556" data-user-id="470203136771096596" style="color: rgb(0,255,158)">asdia</span>
+
+
+        <span class="chatlog__timestamp">04-Sep-21 12:24 AM</span>
+
+            <div class="chatlog__message " data-message-id="883386909617979442" id="message-883386909617979442" title="Message sent: 04-Sep-21 12:24 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://docs.google.com/document/d/1mfzq2EgjUl7Uu8k5bTWgdMuj6L6J6eXorg_5Vm8hplM/edit?usp=drivesdk">https://docs.google.com/document/d/1mfzq2EgjUl7Uu8k5bTWgdMuj6L6J6eXorg_5Vm8hplM/edit?usp=drivesdk</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill chatlog__embed-color-pill--default"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+                                            <div class="chatlog__embed-title">
+                                                    <a class="chatlog__embed-title-link" href="https://docs.google.com/document/d/1mfzq2EgjUl7Uu8k5bTWgdMuj6L6J6eXorg_5Vm8hplM/edit?usp=drivesdk">
+                                                        <div class="markdown preserve-whitespace">[VDC//028//OAA] Official Abbreviations Act</div>
+                                                    </a>
+                                            </div>
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">District of Voopmont and Icelesia  Policy #28 4 SEPTEMBER 2021 OFFICIAL ABBREVIATIONS ACT Senator Asdia0  Effective IMMEDIATELY Description: This Act establishes the official abbreviations of the District.  The official abbreviations for the District of Voopmont and Icelesia are as follows: One ...</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="https://images-ext-1.discordapp.net/external/k1CiDCO8dj52T-JQvKV7USkvXMeBB-tLaahf1GlOsc0/https/lh5.googleusercontent.com/K9UIFmm_i3RUFvzZqou6f9Ls5NmfulgBN_nQQOt5qxMxOa2w27ol9d2P08dA7MXOQ6uvyrRMVwlhXw%3Dw1200-h630-p">
+                                                <img class="chatlog__embed-thumbnail" src="https://images-ext-1.discordapp.net/external/k1CiDCO8dj52T-JQvKV7USkvXMeBB-tLaahf1GlOsc0/https/lh5.googleusercontent.com/K9UIFmm_i3RUFvzZqou6f9Ls5NmfulgBN_nQQOt5qxMxOa2w27ol9d2P08dA7MXOQ6uvyrRMVwlhXw%3Dw1200-h630-p" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 92 message(s)</div>
+</div>
+
+</body>
+
+</html>
